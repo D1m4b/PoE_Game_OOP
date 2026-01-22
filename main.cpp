@@ -1,9 +1,17 @@
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <cstdlib>
+
 #include "windows.h"
-#include "BaseClasses.h"
+
+#include "Npc.h"
 #include "Champion.h"
 #include "Occultist.h"
 #include "Guardian.h"
+#include "Evil.h"
+#include "Player.h"
+#include "Enemy.h"
 using namespace std;
 
 enum class ValueQuality
@@ -70,6 +78,22 @@ unique_ptr<Npc> CreateCharacter(CharacterType type)
     }
 }
 
+void ClearScreen() {
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
+}
+
+void Pause(bool needText)
+{
+    if (needText)
+        cout << "Enter чтобы продолжить...";
+    cin.get();
+    cout << endl;
+}
+
 struct Treasure
 {
     Treasure() = default;
@@ -131,15 +155,17 @@ int main()
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     Player* player = new Player();
-    cout << "Привет путник\nПрисядь у костра и расскажи о себе\nТы впервые тут?\n\t1 - новый персонаж\n\t2 - загрузить";
-
+    cout << "Здравствуй изгнанник! Добро пожаловать в мир Path of Exile! \n\t1 - создать нового персонажа \n\t2 - выйти из игры" << endl;
     unsigned short mainChoice = TestChoise(2, "Наверное ты ошибся, повтори снова");
-    if (mainChoice == 1)  // ЯВНО сравниваем с 1
+    if (mainChoice == 2) {
+        exit(0);
+    }
+    if (mainChoice == 1)  
     {
-        cout << "Расскажи о своих навыках \n\t1 - Чемпион\n\t2 - Оккультист\n\t3 - Защитник";
+        cout << "Выберите класс, чтобы начать игру:   \n\t1 - Чемпион\n\t2 - Оккультист\n\t3 - Защитник" << endl;
         unique_ptr<Npc> character;
 
-        unsigned short classChoice = TestChoise(3, "Такого еще не было в наших краях\nНе мог бы ты повторить"); // ФИКС: 3 вместо 4
+        unsigned short classChoice = TestChoise(3, "Такого еще не было в наших краях\nНе мог бы ты повторить"); 
         switch (classChoice)
         {
         case 1:
@@ -154,12 +180,19 @@ int main()
         }
 
         if (character) {
-            // ФИКС: используем .release() вместо move
-            player->Create(character.release());
+            player->Create(move(character));
             cout << "Персонаж создан успешно!" << endl;
         }
     }
 
-    delete player;
+    Pause(false);
+    Pause(true);
+    ClearScreen();
+
+    cout << "Последнее, что я видел — глаза Китавы, полные желанием меня растерзать. А потом — холод... песок в глазах.\n Я лежал на берегу, где океан плачет чёрными волнами, а небо — цвета запекшейся крови." << endl;
+    cout << "Я решил,что нужно отомстить Китаве и готов был рискнуть всем, чтобы одолеть его." << endl;
+    cout << "Не успел я прийти в себя - как на меня напали жители этого берега - мерзкие утопленники " << endl;
+    Enemy* enemy = new Enemy("утопленник", 10, 3);
+
     return 0;
 }

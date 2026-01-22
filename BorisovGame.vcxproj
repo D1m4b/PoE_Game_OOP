@@ -123,7 +123,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BaseClasses.cpp" />
+    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Npc.cpp" />
     <ClCompile Include="Champion.cpp" />
     <ClCompile Include="Evil.cpp" />
     <ClCompile Include="Guardian.cpp" />
@@ -131,11 +132,13 @@
     <ClCompile Include="Occultist.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BaseClasses.h" />
+    <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Npc.h" />
     <ClInclude Include="Champion.h" />
     <ClInclude Include="Evil.h" />
     <ClInclude Include="Guardian.h" />
     <ClInclude Include="Occultist.h" />
+    <ClInclude Include="Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

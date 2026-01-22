@@ -1,5 +1,5 @@
 #pragma once
-#include "BaseClasses.h"
+#include "Npc.h"
 using namespace std;
 class Evils : virtual public Npc
 {

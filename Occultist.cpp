@@ -1,31 +1,7 @@
 #include "Occultist.h"
-
-bool Occultist::Save()
-{
-    if (Npc::Save())
-    {
-        ofstream saveSystem("save.bin", ios::binary);
-        if (saveSystem.is_open())
-        {
-            saveSystem.write(reinterpret_cast<const char*>(&intellect), sizeof(intellect));
-            for (int i = 0; i < 3; i++)
-            {
-                saveSystem.write(reinterpret_cast<const char*>(&curses[i]), sizeof(curses[i]));
-            }
-            saveSystem.close();
-            return true;
-        }
-        else
-        {
-            cout << "сохранение не удалось" << endl;
-            return false;
-        }
-    }
-};
 Occultist::Occultist()
 {
-    cout << "конструктор Окультиста" << endl;
-    name = "Окультисткаа";
+    name = "Окультистка";
     health = 23;
     damage = 15;
 }
@@ -55,8 +31,8 @@ void Occultist::CastCurses()
 
 void Occultist::Create()
 {
-    cout << "Вы создали Окультистку!" << endl;
-    cout << "Введите имя персонажа\t";
+    cout << "Вы создали Окультистку! - её проклятья помогут победить любого врага " << endl;
+    cout << "Придумайте имя для персонажа\t";
     cin >> name;
     GetInfo();
     CastCurses();
