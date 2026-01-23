@@ -17,6 +17,8 @@ public:
     }
     void GetInfo() override;
     void Create() override;
-    void CastCurses();
+    void GetWeapons() override;
+    void LevelUp() override;
+    void UseAbility() override;
     ~Occultist();
 };

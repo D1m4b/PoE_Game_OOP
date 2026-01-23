@@ -24,9 +24,9 @@ void Occultist::GetInfo()
     cout << endl;
 }
 
-void Occultist::CastCurses() 
+void Occultist:: GetWeapons() 
 {
-    cout << name << " применяет " << curses[lvl - 1] << endl;
+    cout << name << " берёт в руку книгу с проклятьем: " << curses[lvl - 1] << endl;
 }
 
 void Occultist::Create()
@@ -35,7 +35,17 @@ void Occultist::Create()
     cout << "Придумайте имя для персонажа\t";
     cin >> name;
     GetInfo();
-    CastCurses();
+    GetWeapons();
+}
+void Occultist::LevelUp() {
+    lvl++;
+    health += 15;       
+    damage += 45;   
+    intellect += 20;
+    cout << "\nОккультист достиг " << lvl << "-го уровня!\n";
+}
+void Occultist::UseAbility() {
+    cout << name << " применяет " << curses[lvl - 1] << endl;
 }
 Occultist::~Occultist()
 {

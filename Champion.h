@@ -3,7 +3,7 @@
 class Champion : virtual public Npc {
 protected:
     unsigned short strenght{ 31 };
-    string weapons[3]{ "кинжал","рапира","двуручный меч" };
+    string weapons[3]{ "кинжал","коготь","двуручное оружие" };
 public:
     Champion();
     Champion(string name, unsigned int health, float damage); //кастомный конструктор
@@ -14,6 +14,7 @@ public:
     //перегрузка оператора сравнения (==)
     bool operator == (const Champion& champion) const;
     void operator = (Npc npc);
-
+    void LevelUp() override;
+    void UseAbility() override;
     ~Champion(); //деструктор всегда без аргументов
 };

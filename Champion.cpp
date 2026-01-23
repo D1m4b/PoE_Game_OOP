@@ -3,7 +3,7 @@ Champion::Champion() //конструктор по умолчанию, когда нет аргументов
 {
     name = "чемпион";
     health = 35;
-    damage = 10;
+    damage = 35;
 }
 Champion::Champion(string name, unsigned int health, float damage)
 {
@@ -22,8 +22,9 @@ void Champion::GetInfo()   //полиморфизм (перегрузка дл€ метода)
     cout << "ƒоступное оружие - ";
     for (int i = 0; i < lvl; i++)
     {
-        cout << weapons[i] << endl;
+        cout << weapons[i] << " ";
     }
+    cout << endl;
 }
 void Champion::Create()
 {
@@ -46,6 +47,17 @@ void Champion::operator = (Npc npc)
     this->name = npc.GetLvl();
 }
 
+void Champion::LevelUp() {
+    lvl++;
+    health += 25;      
+    damage += 30;
+    strenght += 10;
+    cout << "\n„емпион достиг " << lvl << "-го уровн€!\n";
+    
+}
+void Champion::UseAbility() {
+    cout << name << " наносит мощный удар , использу€ " << weapons[lvl - 1] << endl;;
+}
 //деструктор - метод, который вызываетс€ автоматически при высвобождении пам€ти
 //при окончании работы с экземпл€ром класса (нельз€ вызвать вручную)
 Champion::~Champion() //деструктор всегда без аргументов

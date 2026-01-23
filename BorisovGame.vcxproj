@@ -126,7 +126,6 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Npc.cpp" />
     <ClCompile Include="Champion.cpp" />
-    <ClCompile Include="Evil.cpp" />
     <ClCompile Include="Guardian.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Occultist.cpp" />
@@ -135,7 +134,6 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Npc.h" />
     <ClInclude Include="Champion.h" />
-    <ClInclude Include="Evil.h" />
     <ClInclude Include="Guardian.h" />
     <ClInclude Include="Occultist.h" />
     <ClInclude Include="Player.h" />

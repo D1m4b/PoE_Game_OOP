@@ -14,10 +14,10 @@ Enemy::Enemy(string name, int health, int damage) : Enemy(name, health) {
 }
 void Enemy::GetInfo() {
 	cout << endl;
-	cout << "На вас напал  - " << name << endl;
+	cout << "\tНа вас напал  - " << name << endl;
 	if (health < 0)
-		cout << "Здоровье - 0" << endl;
+		cout << "\tЗдоровье - 0" << endl;
 	else
-		cout << "Здоровье - " << health << endl;
-	cout << "Урон - " << damage << endl;
+		cout << "\tЗдоровье - " << health << endl;
+	cout << "\tУрон - " << damage << endl;
 }

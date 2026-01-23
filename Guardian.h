@@ -9,7 +9,9 @@ public:
 	Guardian();
 	Guardian(string name, unsigned int health, float damage);
 	void GetInfo() override;
-	void CastAuras();
+	void GetWeapons() override;
 	void Create() override;
+	void LevelUp() override;
+	void UseAbility() override;
 	~Guardian();
 };
