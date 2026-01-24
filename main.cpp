@@ -99,7 +99,7 @@ int AttackEnemy(Player* player, Enemy* enemy)
     int damage = player->GetCharacter()->GetDamage();
     enemy->TakeDamage(damage);
     player->GetCharacter()->UseAbility();
-    PrintSlowly("Вы нанесли ", false);
+    PrintSlowly("Вы нанесли противнику ", false);
     PrintSlowly(to_string(damage), false);
     PrintSlowly(" урона.\n", false);
 
@@ -143,7 +143,7 @@ void Fight(Player* player, Enemy* enemy)
 }
 
 
-enum class ValueQuality
+/*enum class ValueQuality
 {
     trash, common, rare, mythic, legendary
 };
@@ -217,7 +217,7 @@ struct Spell
     unsigned short damage{ 1 };
     unsigned short manaCost{ 1 };
 };
-
+*/
 
 int main()
 {
@@ -344,6 +344,7 @@ int main()
             PrintSlowly("Мы покинули это забытое Богом место, по пути домой я рассказывал друзьям о своих приключениях ... Они сказали что мы обязательно сюда вернемся и изучим эту мистическую обитель", false);
 
         }
+    }
     else if (choiceHeart == 2) {
          PrintSlowly("\n Я решил пройти мимо... Чёрт его знает что может стать со мной... Может я стану таким же бесом...", false);
          PrintSlowly("\n Я направился к главным воротам ... Как вдруг... Произошёл яркий красный взрыв... Я снова оказался на том же самом берегу ... Прав был Бес, что ворота для меня навсегда закрыты...", false);
@@ -351,7 +352,7 @@ int main()
          PrintSlowly("\n Морским путешественникам было дано задание найти своего друга экзайла и колонизировать этот мистический остров", false);
          PrintSlowly("\n Могучие воины, великие мореплаватели помогли своему товарищу и стояли всю жизнь плечом друг к другу, вместе изучали новые подземелья разрушенного города, строили новую цивилизацию на этом острове\n", false);
         }
-    }
+    
     cout << "\n Поздравляю вы прошли текстовую игру по мотивам игры Path of Exile\n Оценить игру можно в профиле github : @dim4b" << endl;
     cout << "До новых встреч!";
         return 0;

@@ -16,8 +16,8 @@ void Enemy::GetInfo() {
 	cout << endl;
 	cout << "\tНа вас напал  - " << name << endl;
 	if (health < 0)
-		cout << "\tЗдоровье - 0" << endl;
+		cout << "\tПротивник пал ..." << endl;
 	else
-		cout << "\tЗдоровье - " << health << endl;
-	cout << "\tУрон - " << damage << endl;
+		cout << "\tУ врага осталось - " << health <<  " хп"  << endl;
+	cout << "\tУрон врага - " << damage << endl;
 }
