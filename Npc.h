@@ -18,7 +18,6 @@ public:    //публичный модификатор доступ (использовать метод можно в любом мест
     virtual void GetWeapons();
     virtual void Create() {};
     virtual void TakeDamage(int damage);
-    virtual int CalculateDamage() { return 0; };
     virtual void LevelUp();
     virtual void UseAbility();
     void AddDamage(int bonus);
