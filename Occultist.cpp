@@ -16,7 +16,7 @@ Occultist::Occultist(string name, unsigned int health, float damage)
 void Occultist::GetInfo() 
 {
     Npc::GetInfo();
-    cout << "Интеллект - " << intellect << endl;
+    cout << "\tИнтеллект - " << intellect << endl;
     cout << "Доступные проклятья - ";
     for (int i = 0; i < lvl; i++) {
         cout << curses[i] << " ";
@@ -49,5 +49,4 @@ void Occultist::UseAbility() {
 }
 Occultist::~Occultist()
 {
-    cout << name << " сожгли на костре" << endl;
 };

@@ -49,5 +49,4 @@ void Guardian::UseAbility() {
 }
 Guardian::~Guardian()
 {
-    cout << name << " умер гордо сражаясь в бою " << endl;
 };
