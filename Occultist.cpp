@@ -1,7 +1,7 @@
 #include "Occultist.h"
 Occultist::Occultist()
 {
-    name = "Окультистка";
+    name = "ГЋГЄГіГ«ГјГІГЁГ±ГІГЄГ ";
     health = 23;
     damage = 15;
 }
@@ -16,8 +16,8 @@ Occultist::Occultist(string name, unsigned int health, float damage)
 void Occultist::GetInfo() 
 {
     Npc::GetInfo();
-    cout << "\tИнтеллект - " << intellect << endl;
-    cout << "Доступные проклятья - ";
+    cout << "\tГ€Г­ГІГҐГ«Г«ГҐГЄГІ - " << intellect << endl;
+    cout << "Г„Г®Г±ГІГіГЇГ­Г»ГҐ ГЇГ°Г®ГЄГ«ГїГІГјГї - ";
     for (int i = 0; i < lvl; i++) {
         cout << curses[i] << " ";
     }
@@ -26,13 +26,13 @@ void Occultist::GetInfo()
 
 void Occultist:: GetWeapons() 
 {
-    cout << name << " берёт в руку книгу с проклятьем: " << curses[lvl - 1] << endl;
+    cout << name << " ГЎГҐГ°ВёГІ Гў Г°ГіГЄГі ГЄГ­ГЁГЈГі Г± ГЇГ°Г®ГЄГ«ГїГІГјГҐГ¬: " << curses[lvl - 1] << endl;
 }
 
 void Occultist::Create()
 {
-    cout << "Вы создали Окультистку! - её проклятья помогут победить любого врага " << endl;
-    cout << "Придумайте имя для персонажа\t";
+    cout << "Г‚Г» Г±Г®Г§Г¤Г Г«ГЁ ГЋГЄГіГ«ГјГІГЁГ±ГІГЄГі! - ГҐВё ГЇГ°Г®ГЄГ«ГїГІГјГї ГЇГ®Г¬Г®ГЈГіГІ ГЇГ®ГЎГҐГ¤ГЁГІГј Г«ГѕГЎГ®ГЈГ® ГўГ°Г ГЈГ  " << endl;
+    cout << "ГЏГ°ГЁГ¤ГіГ¬Г Г©ГІГҐ ГЁГ¬Гї Г¤Г«Гї ГЇГҐГ°Г±Г®Г­Г Г¦Г \t";
     cin >> name;
     GetInfo();
     GetWeapons();
@@ -42,11 +42,8 @@ void Occultist::LevelUp() {
     health += 15;       
     damage += 45;   
     intellect += 20;
-    cout << "\nОккультист достиг " << lvl << "-го уровня!\n";
+    cout << "\nГЋГЄГЄГіГ«ГјГІГЁГ±ГІ Г¤Г®Г±ГІГЁГЈ " << lvl << "-ГЈГ® ГіГ°Г®ГўГ­Гї!\n";
 }
 void Occultist::UseAbility() {
-    cout << name << " применяет " << curses[lvl - 1] << endl;
+    cout << name << " ГЇГ°ГЁГ¬ГҐГ­ГїГҐГІ " << curses[lvl - 1] << endl;
 }
-Occultist::~Occultist()
-{
-};
