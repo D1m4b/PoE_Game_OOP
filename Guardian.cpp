@@ -5,7 +5,7 @@
 
 Guardian::Guardian()
 {
-    name = "защитник ";
+    name = "Г§Г Г№ГЁГІГ­ГЁГЄ ";
     health = 23;
     damage = 15;
 }
@@ -19,8 +19,8 @@ Guardian::Guardian(string name, unsigned int health, float damage)
 void Guardian::GetInfo()
 {
     Npc::GetInfo();
-    cout << "\tИнтеллект - " << intellect << endl;
-    cout << "Доступные ауры - ";
+    cout << "\tГ€Г­ГІГҐГ«Г«ГҐГЄГІ - " << intellect << endl;
+    cout << "Г„Г®Г±ГІГіГЇГ­Г»ГҐ Г ГіГ°Г» - ";
     for (int i = 0; i < lvl; i++) {
         cout << auras[i] << " ";
     }
@@ -28,12 +28,12 @@ void Guardian::GetInfo()
 }
 void Guardian::GetWeapons()
 {
-    cout << name << " изучает технику новой ауры - " << auras[lvl - 1] << endl;
+    cout << name << " ГЁГ§ГіГ·Г ГҐГІ ГІГҐГµГ­ГЁГЄГі Г­Г®ГўГ®Г© Г ГіГ°Г» - " << auras[lvl - 1] << endl;
 }
 void Guardian::Create() 
 {
-    cout << "Вы создали Защитника! - Универсального воина, который поможет как в защите, так и в нападении " << endl;
-    cout << "Придумайте имя для персонажа\t";
+    cout << "Г‚Г» Г±Г®Г§Г¤Г Г«ГЁ Г‡Г Г№ГЁГІГ­ГЁГЄГ ! - Г“Г­ГЁГўГҐГ°Г±Г Г«ГјГ­Г®ГЈГ® ГўГ®ГЁГ­Г , ГЄГ®ГІГ®Г°Г»Г© ГЇГ®Г¬Г®Г¦ГҐГІ ГЄГ ГЄ Гў Г§Г Г№ГЁГІГҐ, ГІГ ГЄ ГЁ Гў Г­Г ГЇГ Г¤ГҐГ­ГЁГЁ " << endl;
+    cout << "ГЏГ°ГЁГ¤ГіГ¬Г Г©ГІГҐ ГЁГ¬Гї Г¤Г«Гї ГЇГҐГ°Г±Г®Г­Г Г¦Г \t";
     cin >> name;
     GetInfo();
     GetWeapons();
@@ -42,11 +42,9 @@ void Guardian::LevelUp() {
     lvl++;
     health += 60;      
     damage += 25;    
-    cout << "\nЗащитник достиг " << lvl << "-го уровня!\n";
+    cout << "\nГ‡Г Г№ГЁГІГ­ГЁГЄ Г¤Г®Г±ГІГЁГЈ " << lvl << "-ГЈГ® ГіГ°Г®ГўГ­Гї!\n";
 }
 void Guardian::UseAbility() {
-    cout << name << " применяет " << auras[lvl - 1] << endl;
+    cout << name << " ГЇГ°ГЁГ¬ГҐГ­ГїГҐГІ " << auras[lvl - 1] << endl;
 }
-Guardian::~Guardian()
-{
-};
+
