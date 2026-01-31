@@ -4,7 +4,7 @@
 #include "Occultist.h"
 class Guardian : public Champion, public Occultist {
 protected:
-	string auras[3]{ "решимость","дисциплина","злорадство" };
+	string auras[3]{ "Г°ГҐГёГЁГ¬Г®Г±ГІГј","Г¤ГЁГ±Г¶ГЁГЇГ«ГЁГ­Г ","Г§Г«Г®Г°Г Г¤Г±ГІГўГ®" };
 public:
 	Guardian();
 	Guardian(string name, unsigned int health, float damage);
@@ -13,5 +13,5 @@ public:
 	void Create() override;
 	void LevelUp() override;
 	void UseAbility() override;
-	~Guardian();
+
 };
