@@ -3,7 +3,7 @@
 class Occultist : virtual public Npc {
 protected:
     unsigned short intellect = 27;
-    string curses[4] = { "истощение","горючесть","путы времени","кровотечение", };
+    string curses[4] = { "ГЁГ±ГІГ®Г№ГҐГ­ГЁГҐ","ГЈГ®Г°ГѕГ·ГҐГ±ГІГј","ГЇГіГІГ» ГўГ°ГҐГ¬ГҐГ­ГЁ","ГЄГ°Г®ГўГ®ГІГҐГ·ГҐГ­ГЁГҐ", };
 public:
     Occultist();
     Occultist(string name, unsigned int health, float damage);
@@ -20,5 +20,5 @@ public:
     void GetWeapons() override;
     void LevelUp() override;
     void UseAbility() override;
-    ~Occultist();
+
 };
